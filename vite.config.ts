@@ -13,6 +13,7 @@ export default defineConfig(() => ({
   plugins: [
     vue(),
     vuetify({ autoImport: true }),
+
     Components({
       dirs: ["src/components"], // 要掃描的資料夾（預設就是這個）
       extensions: ["vue"],
@@ -27,6 +28,7 @@ export default defineConfig(() => ({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
       "@components": fileURLToPath(new URL("./src/components", import.meta.url)),
       "@views": fileURLToPath(new URL("./src/views", import.meta.url)),
+      "@styles": fileURLToPath(new URL("./src/styles", import.meta.url)),
     },
   },
 

@@ -30,7 +30,7 @@ function doSomething() {
   <div>
     <v-btn @click="stateRef++">增加 f. 4545</v-btn>
     <!-- UI 元素 -->
-    <p>Data: {{ stateRef }} / {{ stateReactive.name }}</p>
+    <p class="color-red">Data: {{ stateRef }} / {{ stateReactive.name }}</p>
     <p>Computed: {{ getStateRef }} / {{ getStateReactive }}</p>
     <v-btn @click="doSomething()">做一些事</v-btn>
   </div>
