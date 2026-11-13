@@ -1,19 +1,15 @@
-<template>
-  <div>
-    <!-- UI 元素 -->
-    <p>Data: {{ stateRef }} / {{ stateReactive.name }}</p>
-    <p>Computed: {{ getStateRef }} / {{ getStateReactive }}</p>
-    <v-btn @click="doSomething()">做一些事</v-btn>
-  </div>
-</template>
+<script setup lang="ts">
+/**
+ * @file HomeView.vue
+ * @description 測試
+ */
 
-<script lang="ts" setup>
-import { computed, reactive, ref } from 'vue'
+import { computed, reactive, ref } from "vue"
 
 // ========== state ==========
 const stateRef = ref(1)
 const stateReactive = reactive({
-  name: 'may',
+  name: "may",
 })
 
 // ========== computed ==========
@@ -26,9 +22,19 @@ const getStateReactive = computed(() => {
 
 // ========== methods ==========
 function doSomething() {
-  console.log('做一些事')
+  console.log("做一些事")
 }
 </script>
+
+<template>
+  <div>
+    <v-btn @click="stateRef++">增加 stateRef</v-btn>
+    <!-- UI 元素 -->
+    <p>Data: {{ stateRef }} / {{ stateReactive.name }}</p>
+    <p>Computed: {{ getStateRef }} / {{ getStateReactive }}</p>
+    <v-btn @click="doSomething()">做一些事</v-btn>
+  </div>
+</template>
 
 <style scoped>
 /* 樣式區域 */
