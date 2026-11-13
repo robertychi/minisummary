@@ -28,7 +28,7 @@ function doSomething() {
 
 <template>
   <div>
-    <v-btn @click="stateRef++">增加 stateRef</v-btn>
+    <v-btn @click="stateRef++">增加 f. 4545</v-btn>
     <!-- UI 元素 -->
     <p>Data: {{ stateRef }} / {{ stateReactive.name }}</p>
     <p>Computed: {{ getStateRef }} / {{ getStateReactive }}</p>
