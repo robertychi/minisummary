@@ -5,7 +5,9 @@
  */
 
 import { computed, reactive, ref } from "vue"
+import { useCounterStore } from "@/stores/counter"
 
+const counter = useCounterStore()
 // ========== state ==========
 const stateRef = ref(1)
 const stateReactive = reactive({
@@ -34,6 +36,12 @@ function doSomething() {
     <p>Computed: {{ getStateRef }} / {{ getStateReactive }}</p>
     <v-btn @click="doSomething()">做一些事</v-btn>
   </div>
+  <v-container>
+    <p>count: {{ counter.count }}</p>
+    <p>double: {{ counter.double }}</p>
+    <v-btn @click="counter.increment">+1</v-btn>
+    <v-btn @click="counter.reset">重置</v-btn>
+  </v-container>
 </template>
 
 <style scoped>
