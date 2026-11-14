@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from "node:url"
 import vue from "@vitejs/plugin-vue"
 import Components from "unplugin-vue-components/vite"
 import { defineConfig } from "vite"
+import vueDevTools from "vite-plugin-vue-devtools"
 
 const host = process.env.TAURI_DEV_HOST
 
@@ -12,6 +13,7 @@ import vuetify from "vite-plugin-vuetify"
 export default defineConfig(() => ({
   plugins: [
     vue(),
+    vueDevTools(),
     vuetify({ autoImport: true }),
 
     Components({
