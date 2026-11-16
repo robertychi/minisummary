@@ -1,58 +1,53 @@
-<script setup lang="ts">
-/**
- * @file HomeView.vue
- * @description 測試
- */
+<script setup>
+import { onMounted } from "vue"
+import { useRouter } from "vue-router"
 
-import { computed, reactive, ref } from "vue"
-import { useCounterStore } from "@/stores/counter"
+const router = useRouter()
 
-const counter = useCounterStore()
-// ========== state ==========
-const stateRef = ref(1)
-const stateReactive = reactive({
-  name: "may",
-})
-
-// ========== computed ==========
-const getStateRef = computed(() => {
-  return stateRef.value
-})
-const getStateReactive = computed(() => {
-  return stateReactive.name
-})
-
-// ========== methods ==========
-function doSomething() {
-  console.log("做一些事")
+const page = {
+  style: "home",
+  name: "Home",
+  upperCamelCaseName: "Home",
+  snakeCaseName: "home",
+  lowerCamelCaseName: "home",
+  title: "首頁",
+  subTitle: "",
 }
+
+const toMajorPage = () => {
+  router.push({ name: "MajorIndex" })
+}
+const toAboutPage = () => {
+  router.push({ name: "AboutView" })
+}
+
+const toLoginPage = () => {
+  router.push({ name: "LoginView" })
+}
+
+onMounted(() => {
+  window.document.title = `abc`
+})
 </script>
 
 <template>
   <v-app>
-    <v-app-bar title="My App" />
     <v-main>
-      <v-container>
-        <h1>Home View</h1>
-        <p>Welcome to the Home View!</p>
-      </v-container>
-      <v-container>
-        <v-btn @click="stateRef++">增加 f. 4545</v-btn>
-        <!-- UI 元素 -->
-        <p class="color-red">Data: {{ stateRef }} / {{ stateReactive.name }}</p>
-        <p>Computed: {{ getStateRef }} / {{ getStateReactive }}</p>
-        <v-btn @click="doSomething()">做一些事</v-btn>
-      </v-container>
-      <v-container>
-        <p>count: {{ counter.count }}</p>
-        <p>double: {{ counter.double }}</p>
-        <v-btn @click="counter.increment">+1</v-btn>
-        <v-btn @click="counter.reset">重置</v-btn>
+      <v-container fluid class="fill-height">
+        <v-row align="center" justify="center" class="fill-height">
+          <v-col cols="12" xl="3" lg="4" md="5" sm="8">
+            <v-row dense>
+              <v-col cols="12" class="text-center red">
+                <h1 class="text-display-large">小商.</h1>
+              </v-col>
+              <v-col cols="12">
+                <v-btn block color="primary" @click="toMajorPage">進入系統</v-btn>
+                <!-- <v-btn block variant="outlined" color="primary" @click="toLoginPage">登入</v-btn> -->
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
       </v-container>
     </v-main>
   </v-app>
 </template>
-
-<style scoped>
-/* 樣式區域 */
-</style>
