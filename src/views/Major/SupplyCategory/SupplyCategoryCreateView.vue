@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * @file SupplyCategoryCreateView.vue
+ * @file SupplyClassCreateView.vue
  * @description
  */
 
@@ -11,7 +11,7 @@
 </script>
 
 <template>
-  <p>SupplyCategoryCreateView.vue</p>
+  <p>SupplyClassCreateView.vue</p>
 </template>
 
 <style scoped>
