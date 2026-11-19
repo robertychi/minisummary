@@ -4,7 +4,6 @@ import { ref } from "vue"
 export const useMajorNavStore = defineStore("majorNav", () => {
   const isDrawerOpen = ref(true)
   function toggleDrawer() {
-    console.log(isDrawerOpen.value)
     isDrawerOpen.value = !isDrawerOpen.value
   }
   const drawerItems = ref([
@@ -19,28 +18,99 @@ export const useMajorNavStore = defineStore("majorNav", () => {
         },
       ],
     },
-
     {
-      keyWord: "Category",
-      subHeader: "各項類別",
+      keyWord: "daily",
+      subHeader: "日常業務",
       subItems: [
         {
           style: "supply",
-          title: "廠商類別",
-          icon: "mdi-bookmark",
-          routeName: "SupplyCategoryList",
+          title: "詢價單",
+          icon: "mdi-numeric-1-box",
+          routeName: "PurchaseQuoteList",
         },
         {
           style: "customer",
-          title: "客戶類別",
-          icon: "mdi-bookmark",
-          routeName: "CustomerCategoryList",
+          title: "報價單",
+          icon: "mdi-numeric-2-box",
+          routeName: "SalesQuoteList",
         },
         {
-          style: "product",
-          title: "產品類別",
-          icon: "mdi-bookmark",
-          routeName: "ProductCategoryList",
+          style: "supply",
+          title: "採購單",
+          icon: "mdi-numeric-3-box",
+          routeName: "PurchaseOrderList",
+        },
+        {
+          style: "customer",
+          title: "訂購單",
+          icon: "mdi-numeric-4-box",
+          routeName: "SalesOrderList",
+        },
+        {
+          style: "supply",
+          title: "進貨單",
+          icon: "mdi-numeric-5-box",
+          routeName: "PurchaseBillList",
+        },
+        {
+          style: "customer",
+          title: "銷貨單",
+          icon: "mdi-numeric-6-box",
+          routeName: "SalesBillList",
+        },
+      ],
+    },
+    {
+      keyWord: "return",
+      subHeader: "退回業務",
+      subItems: [
+        {
+          style: "supply",
+          title: "進貨退回單",
+          icon: "mdi-numeric-7-box",
+          routeName: "PurchaseReturnList",
+        },
+        {
+          style: "customer",
+          title: "銷貨退回單",
+          icon: "mdi-numeric-8-box",
+          routeName: "SalesReturnList",
+        },
+      ],
+    },
+    {
+      keyWord: "account",
+      subHeader: "帳務管理",
+      subItems: [
+        {
+          style: "supply",
+          title: "應付帳款",
+          icon: "mdi-cash-minus",
+          routeName: "AccountPayableList",
+        },
+        {
+          style: "customer",
+          title: "應收帳款",
+          icon: "mdi-cash-plus",
+          routeName: "AccountReceivableList",
+        },
+      ],
+    },
+    {
+      keyWord: "stock",
+      subHeader: "庫存管理",
+      subItems: [
+        {
+          style: "supply",
+          title: "入庫單",
+          icon: "mdi-package-down",
+          routeName: "AccountPayableList",
+        },
+        {
+          style: "customer",
+          title: "出庫單",
+          icon: "mdi-package-up",
+          routeName: "AccountReceivableList",
         },
       ],
     },
@@ -65,6 +135,30 @@ export const useMajorNavStore = defineStore("majorNav", () => {
           title: "產品資料",
           icon: "mdi-package-variant",
           routeName: "ProductList",
+        },
+      ],
+    },
+    {
+      keyWord: "Category",
+      subHeader: "各項類別",
+      subItems: [
+        {
+          style: "supply",
+          title: "廠商類別",
+          icon: "mdi-bookmark",
+          routeName: "SupplyCategoryList",
+        },
+        {
+          style: "customer",
+          title: "客戶類別",
+          icon: "mdi-bookmark",
+          routeName: "CustomerCategoryList",
+        },
+        {
+          style: "product",
+          title: "產品類別",
+          icon: "mdi-bookmark",
+          routeName: "ProductCategoryList",
         },
       ],
     },
