@@ -32,7 +32,10 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "backup/MajorAppBar.vue"
+    "backup/MajorAppBar.vue",
+    "backup/counter.ts",
+    "backup/counter.spec.ts",
+    "backup/page.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
